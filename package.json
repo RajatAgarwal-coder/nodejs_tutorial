@@ -1,0 +1,17 @@
+{
+  "name": "npm-test",
+  "version": "1.0.0",
+  "description": "This Project is being created to learn about npm.",
+  "license": "ISC",
+  "author": "Rajat Agarwal",
+  "type": "commonjs",
+  "main": "LEVEL5.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon LEVEL5.js",
+    "Raj_Run": "node LEVEL5.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
