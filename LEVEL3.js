@@ -56,7 +56,13 @@ const requestHandler = (req, res) => {
             const bodyObject = Object.fromEntries(parms); // Using Object.fromEntries to convert URLSearchParams to an object Shorthand for the above loop
             console.log(bodyObject); // Logging the bodyObject to see the parsed data
 
-            fs.writeFileSync('userDetails.txt', JSON.stringify(bodyObject)) // Beacause it want Stringify data to write in file
+            /*fs.writeFileSync('userDetails.txt', JSON.stringify(bodyObject))  Beacause it want Stringify data to write in file*/
+
+            // By using fs.writeFileSync, bol raha hai yaha kam worker thread ko maat daalo. So we will use fs.writeFile instead of fs.writeFileSync
+
+            fs,fs.writeFile('userDetails.txt', JSON.stringify(bodyObject), (err) => {
+                console.log(err);
+            });
 
             res.setHeader('Location', '/'); // Correct spelling 
             res.statusCode = 302; 
